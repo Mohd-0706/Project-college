@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Submission Page</title>
+    <link rel="stylesheet" href="css/submission.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="page-transition"></div>
+    
+    <header class="header">
+        <div class="container">
+            <nav class="navbar">
+                <div class="logo"><span></span></div>
+                <div class="nav-links">
+                    <a href="home.html">Home</a>
+                    <a href="admin.html">Admin</a>
+                    <a href="submission.html" class="active">Submit Project</a>
+                </div>
+                <div class="hamburger">
+                    <div class="line"></div>
+                    <div class="line"></div>
+                    <div class="line"></div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main class="submission-main">
+        <section class="project-submission">
+            <div class="container">
+                <h1 class="section-title">Submission Form</h1>
+                
+                <form id="submissionForm" class="submission-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="reg-number">Register Number</label>
+                            <input type="text" id="reg-number" name="reg-number" required>
+                            <div class="error-message" id="reg-error"></div>
+                        </div>
+                        <div class="form-group">
+                            <label for="student-name">Student Name</label>
+                            <input type="text" id="student-name" name="student-name" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="project-title">Project Title</label>
+                        <input type="text" id="project-title" name="project-title" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="department">Department</label>
+                        <input type="text" id="department" name="department" required>
+                    </div>
+                    
+                    
+                    <div class="form-group file-upload">
+                        <label for="project-file">Upload</label>
+                        <div class="upload-area" id="uploadArea">
+                            <input type="file" id="project-file" name="project-file" accept=".pdf" required>
+                            <div class="upload-content">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                                    <polyline points="17 8 12 3 7 8"></polyline>
+                                    <line x1="12" y1="3" x2="12" y2="15"></line>
+                                </svg>
+                                <p>Drag & drop your file here or click to browse</p>
+                                <p class="file-info">Max file size: 5MB</p>
+                            </div>
+                        </div>
+                        <div class="progress-container" id="progressContainer">
+                            <div class="progress-bar" id="progressBar"></div>
+                            <span class="progress-text" id="progressText">0%</span>
+                        </div>
+                    </div>
+                    
+                    <div class="form-submit">
+                        <button type="submit" class="btn btn-primary">Submit Project</button>
+                    </div>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <div class="success-modal" id="successModal">
+        <div class="modal-content">
+            <div class="checkmark">
+                <svg class="checkmark__circle" viewBox="0 0 52 52">
+                    <circle class="checkmark__circle-background" cx="26" cy="26" r="25" fill="none"></circle>
+                    <circle class="checkmark__circle-stroke" cx="26" cy="26" r="25" fill="none"></circle>
+                </svg>
+                <svg class="checkmark__icon" viewBox="0 0 24 24">
+                    <path class="checkmark__icon-stroke" d="M4.1 12.7L9 17.6 20.3 6.3" fill="none"></path>
+                </svg>
+            </div>
+            <h2>Submission Successful!</h2>
+            <p>Your project has been submitted successfully.</p>
+            <button class="btn btn-primary" id="modalClose">Close</button>
+        </div>
+    </div>
+
+
+    <script src="js/script.js"></script>
+</body>
+</html>
